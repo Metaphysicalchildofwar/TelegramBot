@@ -20,7 +20,7 @@ namespace TelegramBot
         /// </summary>
         public static string ParsAnek()
         {
-            Html = ParsingHtml();
+            Html = ParsHtml();
             Reg = new Regex(@"(?<=<meta name=" + "\"description\" content=\")" + @"([\s\S]*?)(?=" + "\">)");
             Collection = Reg.Matches(Html);
             if (Collection.Count > 0)
@@ -36,7 +36,7 @@ namespace TelegramBot
         /// <summary>
         /// Получение разметки страницы.
         /// </summary>
-        public static string ParsingHtml()
+        public static string ParsHtml()
         {
             using (var Client = new WebClient { Encoding = Encoding.Default })
             {
