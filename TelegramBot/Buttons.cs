@@ -19,7 +19,7 @@ namespace TelegramBot
             {
                 Keyboard = new List<List<KeyboardButton>>
                 {
-                    new List<KeyboardButton>{new KeyboardButton { Text = "Рандомный анекдот"} }
+                    new List<KeyboardButton>{new KeyboardButton { Text = $"🍬 Рандомный анекдот" } }
                 },
                 ResizeKeyboard = true
             };
