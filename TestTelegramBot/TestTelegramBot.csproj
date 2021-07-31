@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ParseVkMemes\ParseVkMemes.csproj" />
     <ProjectReference Include="..\TelegramBot\TelegramBot.csproj" />
   </ItemGroup>
 

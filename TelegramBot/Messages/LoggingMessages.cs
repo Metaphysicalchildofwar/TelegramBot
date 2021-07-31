@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using Telegram.Bot.Args;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.Enums;
 
 namespace TelegramBot
 {

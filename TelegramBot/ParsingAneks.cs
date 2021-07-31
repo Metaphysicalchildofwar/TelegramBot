@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -25,7 +26,7 @@ namespace TelegramBot
             Collection = Reg.Matches(Html);
             if (Collection.Count > 0)
             {
-                return Collection[0].Value;
+                return Collection.FirstOrDefault().Value;
             }
             else
             {
