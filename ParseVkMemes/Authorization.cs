@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Text;
 using VkNet;
 using VkNet.Enums.Filters;
@@ -7,6 +8,9 @@ using VkNet.Model;
 
 namespace ParseVkMemes
 {
+    /// <summary>
+    /// Вход в ВК.
+    /// </summary>
     public static class Authorization
     {
         public delegate void Mess(string mes);
@@ -21,15 +25,15 @@ namespace ParseVkMemes
                 api = new VkApi();
                 api.Authorize(new ApiAuthParams()
                 {
-                    ApplicationId = 7911557,
-                    Login = "orlovaleksey5@gmail.com",
-                    Password = "1337Alex1488",
+                    ApplicationId = ulong.Parse(ConfigurationManager.AppSettings.Get("AppId")),
+                    Login = ConfigurationManager.AppSettings.Get("LoginVk"),
+                    Password = ConfigurationManager.AppSettings.Get("PassVk"),
                     //AccessToken = AccessToken,
                     Settings = Scope,
-                    UserId = 297701190
+                    UserId = long.Parse(ConfigurationManager.AppSettings.Get("UserId"))
                 });
 
-                Err?.Invoke("Вход выполнен");
+                Err?.Invoke("Вход в ВК выполнен");
                 return api;
             }
             catch (Exception ex)

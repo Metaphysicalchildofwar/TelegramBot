@@ -1,4 +1,6 @@
 ﻿using Telegram.Bot;
+using System.Configuration;
+using System.Collections.Specialized;
 
 namespace TelegramBot
 {
@@ -7,7 +9,7 @@ namespace TelegramBot
     /// </summary>
     public static class InitializeBot
     {
-        private static string Token { get; } = "1908202643:AAEObGX8meJ0xivUZKj_g20Bjbi8pfyY9ns";
+        private static string Token { get; } = ConfigurationManager.AppSettings.Get("TelegramBotToken");
         public static TelegramBotClient Client = new TelegramBotClient(Token);
     }
 }

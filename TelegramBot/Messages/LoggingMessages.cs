@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using Telegram.Bot.Types;
 
@@ -9,7 +10,7 @@ namespace TelegramBot
     /// </summary>
     public class LoggingMessages
     {
-        private static string Path { get; } = @"E:\Study\TelegramBot\TelegramBot\logfile.txt";
+        private static string Path { get; } = ConfigurationManager.AppSettings.Get("LogFile");
 
         /// <summary>
         /// Логирование отправленных/принятых сообщений.

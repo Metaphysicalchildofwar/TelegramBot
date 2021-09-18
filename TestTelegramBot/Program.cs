@@ -1,5 +1,6 @@
 ﻿using ParseVkMemes;
 using System;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using Telegram.Bot.Args;
@@ -11,7 +12,7 @@ namespace TestTelegramBot
     class Program
     {
         static DefiningMessage messages = new DefiningMessage();
-        static VkApi AuthUser = Authorization.LogIn();
+        static VkApi AuthUser;
         static void Main(string[] args)
         {
             try
@@ -19,9 +20,11 @@ namespace TestTelegramBot
                 //Вк
                 // 527043048 
                 ParseVkMemes.Authorization.Err += (x) => Console.WriteLine(x);
+                AuthUser = Authorization.LogIn();
 
                 //Телеграм
                 InitializeBot.Client.SetWebhookAsync("");
+                Console.WriteLine($"Бот {InitializeBot.Client.GetMeAsync().Result.FirstName} включен.");
                 InitializeBot.Client.StartReceiving();
                 InitializeBot.Client.OnMessage += OnMessageHandler;
                 Console.ReadLine();
@@ -37,6 +40,7 @@ namespace TestTelegramBot
         {
             try
             {
+                
                 //логирование приема сообщений
                 Console.WriteLine(Task.Run(() => LoggingMessages.LogMess(e.Message, false)).Result);
                 //отправка сообщений

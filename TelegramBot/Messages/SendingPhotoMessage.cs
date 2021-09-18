@@ -60,7 +60,7 @@ namespace TelegramBot.Sending
         /// </summary>
         private string SearchImage(VkApi auth)
         {
-            var photos = Methods.GettingPhotos(auth).ToList();
+            var photos = MethodsForVk.GettingPhotos(auth).ToList();
             return photos[new Random().Next(photos.Count)].Sizes[6].Url.AbsoluteUri.ToString(); 
         }
     }

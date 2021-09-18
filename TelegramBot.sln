@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBot", "TelegramBot\TelegramBot.csproj", "{01747819-8463-4CF6-9A14-904F5FAF2266}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTelegramBot", "TestTelegramBot\TestTelegramBot.csproj", "{76217FDD-9B4A-449C-8754-58B435980C8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkTelegramBot", "TestTelegramBot\WorkTelegramBot.csproj", "{76217FDD-9B4A-449C-8754-58B435980C8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseVkMemes", "ParseVkMemes\ParseVkMemes.csproj", "{398053CD-0299-4300-9555-E094E1B3FB41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParseVkMemes", "ParseVkMemes\ParseVkMemes.csproj", "{398053CD-0299-4300-9555-E094E1B3FB41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,6 +9,9 @@ using TelegramBot.Sending;
 
 namespace TelegramBot.Messages
 {
+    /// <summary>
+    /// Класс инициализации кнопок.
+    /// </summary>
     public class InitializeSending : SendMessage
     {
         /// <summary>

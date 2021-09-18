@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -41,7 +42,7 @@ namespace TelegramBot
         {
             using (var Client = new WebClient { Encoding = Encoding.Default })
             {
-                return Client.DownloadString("https://baneks.ru/random");
+                return Client.DownloadString(ConfigurationManager.AppSettings.Get("SiteAneks"));
             }
             
         }
