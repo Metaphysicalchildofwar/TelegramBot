@@ -7,7 +7,7 @@ using Telegram.Bot.Args;
 using TelegramBot;
 using VkNet;
 
-namespace TestTelegramBot
+namespace WorkTelegramBot
 {
     class Program
     {
