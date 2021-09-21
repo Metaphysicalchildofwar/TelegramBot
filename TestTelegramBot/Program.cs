@@ -19,7 +19,7 @@ namespace WorkTelegramBot
             {
                 //Вк
                 // 527043048 
-                ParseVkMemes.Authorization.Err += (x) => Console.WriteLine(x);
+                Authorization.Err += (x) => Console.WriteLine(x);
                 AuthUser = Authorization.LogIn();
 
                 //Телеграм
