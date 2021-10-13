@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.Enums;
 
 namespace TelegramBot.Messages.TextMessages
 {
@@ -19,8 +18,6 @@ namespace TelegramBot.Messages.TextMessages
                 args.Message.Chat.Id,
                 from,
                 replyToMessageId: args.Message.MessageId);
-            //parseMode: ParseMode.Markdown, 
-            //replyMarkup: Buttons.GetButtons());
         }
 
         /// <summary>

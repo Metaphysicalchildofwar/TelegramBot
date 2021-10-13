@@ -7,6 +7,9 @@ using TextScoring.CreateVoiceMessage;
 
 namespace TelegramBot.Messages.VoiceMessages
 {
+    /// <summary>
+    /// Отправляет голосовое сообщение
+    /// </summary>
     public class SendingVoiceMessage : SendMessage
     {
         private static string PathVoice { get; } = ConfigurationManager.AppSettings.Get("VoiceFile");
@@ -20,7 +23,6 @@ namespace TelegramBot.Messages.VoiceMessages
             {
                 return await InitializeBot.Client.SendVoiceAsync(
                     chatId: args.Message.Chat.Id,
-                    //from,
                     replyToMessageId: args.Message.MessageId,
                     voice: message);
             }
@@ -39,7 +41,6 @@ namespace TelegramBot.Messages.VoiceMessages
             DeleteFileAfterSubmission.DeleteFile();
 
             return LoggingMessages.LogMess(mes, true);
-
         }
     }
 }

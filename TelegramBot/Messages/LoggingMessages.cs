@@ -1,5 +1,4 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.IO;
 using Telegram.Bot.Types;
 
@@ -32,7 +31,7 @@ namespace TelegramBot.Messages
         {
             using (StreamWriter sw = new StreamWriter(Path, true, System.Text.Encoding.Default))
             {
-                sw.Write(String.Concat(mes,'\n'));
+                sw.Write(string.Concat(mes,'\n'));
             }
         }
     }

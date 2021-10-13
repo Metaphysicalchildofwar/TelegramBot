@@ -8,10 +8,13 @@ namespace TextScoring.CreateVoiceMessage
     public static class DeleteFileAfterSubmission
     {
         private static string PathVoice { get; } = ConfigurationManager.AppSettings.Get("VoiceFile");
+
+        /// <summary>
+        /// Удаление файла.
+        /// </summary>
         public static void DeleteFile()
         {
             System.IO.File.Delete(PathVoice);
-
         }
     }
 }

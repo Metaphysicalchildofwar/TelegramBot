@@ -13,11 +13,12 @@ namespace TelegramBot.Messages
         /// </summary>
         public object TypeForMessage(MessageEventArgs args)
         {
+            if (args.Message.Type != Telegram.Bot.Types.Enums.MessageType.Text) return null;
+
             var say = new MessageSayHandler();
             var anek = new MessageAnekHandler();
             var help = new MessageHelpHandler();
 
-            if (args.Message.Type != Telegram.Bot.Types.Enums.MessageType.Text) return null;
             say.SetNext(anek).SetNext(help);
             return say.Handle(args);
         }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TextScoring.CreateVoiceMessage
+﻿namespace TextScoring.CreateVoiceMessage
 {
     /// <summary>
     /// Обрезка строки для получения голосового
