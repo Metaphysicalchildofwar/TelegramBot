@@ -1,27 +1,19 @@
-﻿using ParseVkMemes;
+﻿
 using System;
-using System.Configuration;
-using System.Linq;
 using System.Threading.Tasks;
 using Telegram.Bot.Args;
 using TelegramBot;
-using VkNet;
+using TelegramBot.Messages;
 
 namespace WorkTelegramBot
 {
     class Program
     {
         static DefiningMessage messages = new DefiningMessage();
-        static VkApi AuthUser;
         static void Main(string[] args)
         {
             try
             {
-                //Вк
-                // 527043048 
-                Authorization.Err += (x) => Console.WriteLine(x);
-                AuthUser = Authorization.LogIn();
-
                 //Телеграм
                 InitializeBot.Client.SetWebhookAsync("");
                 Console.WriteLine($"Бот {InitializeBot.Client.GetMeAsync().Result.FirstName} включен.");
@@ -44,7 +36,7 @@ namespace WorkTelegramBot
                 //логирование приема сообщений
                 Console.WriteLine(Task.Run(() => LoggingMessages.LogMess(e.Message, false)).Result);
                 //отправка сообщений
-                Console.WriteLine(Task.Run(() => messages.TypeForMessage(e, AuthUser)).Result);
+                Console.WriteLine(Task.Run(() => messages.TypeForMessage(e)).Result);
             }
             catch (Exception ex)
             {

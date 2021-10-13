@@ -3,7 +3,7 @@ using System.Configuration;
 using System.IO;
 using Telegram.Bot.Types;
 
-namespace TelegramBot
+namespace TelegramBot.Messages
 {
     /// <summary>
     /// Логирование сообщений.

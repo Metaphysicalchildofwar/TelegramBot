@@ -1,11 +1,9 @@
 ﻿using System;
 using Telegram.Bot.Args;
-using Telegram.Bot.Types.Enums;
-using TelegramBot.Messages;
-using TelegramBot.Sending;
-using VkNet;
+using TelegramBot.Messages.TextMessages;
+using TelegramBot.Messages.VoiceMessages;
 
-namespace TelegramBot
+namespace TelegramBot.Messages
 {
     /// <summary>
     /// Определение сообщений ботом.
@@ -16,21 +14,21 @@ namespace TelegramBot
         /// <summary>
         /// Определение типа сообщения.
         /// </summary>
-        public string TypeForMessage(MessageEventArgs args, VkApi auth)
+        public string TypeForMessage(MessageEventArgs args)
         {
             try
             {
-                switch (args.Message.Text)
+                if (args.Message.Text?.Substring(0, 4) == "/say")
                 {
-                    case "/start":
-                        sendMessage = new InitializeSending() { };
-                        return sendMessage.SendingMessage(args);
-                    case "📃 Рандомный анекдот":
+                    sendMessage = new SendingVoiceMessage() { };
+                    return sendMessage.SendingMessage(args);
+                }
+
+                switch (args.Message.Text)
+                {                    
+                    case "/anek":
                         sendMessage = new SendingTextMessage() { };
                         return sendMessage.SendingMessage(args);
-                    case "🎨 Рандомный мем":
-                        SendingPhotoMessage sendFromVk = new SendingPhotoMessage() { };
-                        return sendFromVk.SendingFromVkMessage(args, auth);
                     default: return null;
                 }
             }

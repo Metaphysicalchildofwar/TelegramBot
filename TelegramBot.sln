@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBot", "TelegramBot\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkTelegramBot", "TestTelegramBot\WorkTelegramBot.csproj", "{76217FDD-9B4A-449C-8754-58B435980C8D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParseVkMemes", "ParseVkMemes\ParseVkMemes.csproj", "{398053CD-0299-4300-9555-E094E1B3FB41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParseAneks", "ParseAneks\ParseAneks.csproj", "{59D83296-A81C-4888-9DAA-847E6146FF1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseAneks", "ParseAneks\ParseAneks.csproj", "{59D83296-A81C-4888-9DAA-847E6146FF1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextScoring", "TextScoring\TextScoring.csproj", "{5BC4790A-ED1B-40F3-ACD0-CDDD395AD35A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{76217FDD-9B4A-449C-8754-58B435980C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76217FDD-9B4A-449C-8754-58B435980C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76217FDD-9B4A-449C-8754-58B435980C8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{398053CD-0299-4300-9555-E094E1B3FB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{398053CD-0299-4300-9555-E094E1B3FB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{398053CD-0299-4300-9555-E094E1B3FB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{398053CD-0299-4300-9555-E094E1B3FB41}.Release|Any CPU.Build.0 = Release|Any CPU
 		{59D83296-A81C-4888-9DAA-847E6146FF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{59D83296-A81C-4888-9DAA-847E6146FF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59D83296-A81C-4888-9DAA-847E6146FF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59D83296-A81C-4888-9DAA-847E6146FF1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC4790A-ED1B-40F3-ACD0-CDDD395AD35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC4790A-ED1B-40F3-ACD0-CDDD395AD35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC4790A-ED1B-40F3-ACD0-CDDD395AD35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC4790A-ED1B-40F3-ACD0-CDDD395AD35A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

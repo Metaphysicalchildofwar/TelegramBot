@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ParseAneks\ParseAneks.csproj" />
-    <ProjectReference Include="..\ParseVkMemes\ParseVkMemes.csproj" />
+    <ProjectReference Include="..\TextScoring\TextScoring.csproj" />
   </ItemGroup>
 
 </Project>

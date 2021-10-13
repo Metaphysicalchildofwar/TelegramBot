@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
-    <PackageReference Include="VkNet" Version="1.65.0" />
+    <PackageReference Include="AWSSDK.Polly" Version="3.7.3.23" />
   </ItemGroup>
 
 </Project>

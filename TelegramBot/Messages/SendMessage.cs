@@ -4,9 +4,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
-using VkNet;
 
-namespace TelegramBot.Sending
+namespace TelegramBot.Messages
 {
     /// <summary>
     /// Родительский класс отправки сообщений

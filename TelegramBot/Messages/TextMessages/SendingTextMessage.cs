@@ -4,7 +4,7 @@ using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
-namespace TelegramBot.Sending
+namespace TelegramBot.Messages.TextMessages
 {
     /// <summary>
     /// Отправка текстовых сообщений
@@ -17,11 +17,11 @@ namespace TelegramBot.Sending
         public override async Task<Message> MessageFromBot(string from, MessageEventArgs args)
         {
             return await InitializeBot.Client.SendTextMessageAsync(
-                args.Message.Chat.Id, 
-                from, 
-                replyToMessageId: args.Message.MessageId, 
+                args.Message.Chat.Id,
+                from,
+                replyToMessageId: args.Message.MessageId);
                 //parseMode: ParseMode.Markdown, 
-                replyMarkup: Buttons.GetButtons());
+                //replyMarkup: Buttons.GetButtons());
         }
 
         /// <summary>
