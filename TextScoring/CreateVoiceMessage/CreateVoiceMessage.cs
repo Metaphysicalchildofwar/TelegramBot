@@ -4,7 +4,7 @@ using Amazon.Polly.Model;
 using Amazon.Runtime;
 using System.Configuration;
 using System.Threading.Tasks;
-namespace TelegramBot.Messages.VoiceMessages.CreateVoiceMessage
+namespace TextScoring.CreateVoiceMessage
 {
     /// <summary>
     /// Создание голосового сообщения

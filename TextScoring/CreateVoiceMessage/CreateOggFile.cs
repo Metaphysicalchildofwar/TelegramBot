@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.IO;
 
-namespace TelegramBot.Messages.VoiceMessages.CreateVoiceMessage
+namespace TextScoring.CreateVoiceMessage
 {
     /// <summary>
     /// Создание файла .OGG

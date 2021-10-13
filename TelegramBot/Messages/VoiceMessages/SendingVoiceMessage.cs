@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Threading.Tasks;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
-using TelegramBot.Messages.VoiceMessages.CreateVoiceMessage;
+using TextScoring.CreateVoiceMessage;
 
 namespace TelegramBot.Messages.VoiceMessages
 {
@@ -32,7 +32,7 @@ namespace TelegramBot.Messages.VoiceMessages
         public override string SendingMessage(MessageEventArgs args)
         {
             //создание сообщения 
-            if (!CreateVoiceMessage.CreateVoiceMessage.CreateMessage(args.Message.Text).Result) throw new Exception("Произошла ошибка при создании голосового сообщения");
+            if (!CreateVoiceMessage.CreateMessage(args.Message.Text).Result) throw new Exception("Произошла ошибка при создании голосового сообщения");
 
             Message mes = MessageFromBot(PathVoice, args).Result;
 

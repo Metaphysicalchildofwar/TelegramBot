@@ -1,7 +1,5 @@
-﻿using System;
-using Telegram.Bot.Args;
-using TelegramBot.Messages.TextMessages;
-using TelegramBot.Messages.VoiceMessages;
+﻿using Telegram.Bot.Args;
+using TelegramBot.Messages.Handlers;
 
 namespace TelegramBot.Messages
 {
@@ -10,32 +8,18 @@ namespace TelegramBot.Messages
     /// </summary>
     public class DefiningMessage
     {
-        private SendMessage sendMessage;
         /// <summary>
         /// Определение типа сообщения.
         /// </summary>
-        public string TypeForMessage(MessageEventArgs args)
+        public object TypeForMessage(MessageEventArgs args)
         {
-            try
-            {
-                if (args.Message.Text?.Substring(0, 4) == "/say")
-                {
-                    sendMessage = new SendingVoiceMessage() { };
-                    return sendMessage.SendingMessage(args);
-                }
+            var say = new MessageSayHandler();
+            var anek = new MessageAnekHandler();
+            var help = new MessageHelpHandler();
 
-                switch (args.Message.Text)
-                {                    
-                    case "/anek":
-                        sendMessage = new SendingTextMessage() { };
-                        return sendMessage.SendingMessage(args);
-                    default: return null;
-                }
-            }
-            catch(Exception ex)
-            {
-                return ex.Message;
-            }
+            if (args.Message.Type != Telegram.Bot.Types.Enums.MessageType.Text) return null;
+            say.SetNext(anek).SetNext(help);
+            return say.Handle(args);
         }
     }
 }

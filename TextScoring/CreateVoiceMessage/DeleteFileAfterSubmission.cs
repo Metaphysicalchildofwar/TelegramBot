@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace TelegramBot.Messages.VoiceMessages.CreateVoiceMessage
+namespace TextScoring.CreateVoiceMessage
 {
     /// <summary>
     /// Удаление файла после отправки.

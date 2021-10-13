@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TelegramBot.Messages.VoiceMessages.CreateVoiceMessage
+namespace TextScoring.CreateVoiceMessage
 {
     /// <summary>
     /// Обрезка строки для получения голосового
