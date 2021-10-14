@@ -20,19 +20,7 @@ namespace TelegramBot.Messages
         {
             var Name = from == true ? args.From.FirstName : args.Chat.FirstName;
             var mes = $"{args.Date.ToLocalTime()} от {Name} сообщение типа {args.Type}: {args.Text}";
-            WorkRecording(mes);
             return mes;
-        }
-
-        /// <summary>
-        /// Логирование в файл.
-        /// </summary>
-        public static void WorkRecording(string mes)
-        {
-            using (StreamWriter sw = new StreamWriter(Path, true, System.Text.Encoding.Default))
-            {
-                sw.Write(string.Concat(mes,'\n'));
-            }
         }
     }
 }
