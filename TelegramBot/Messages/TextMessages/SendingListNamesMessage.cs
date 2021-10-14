@@ -35,7 +35,7 @@ namespace TelegramBot.Messages.TextMessages
         /// </summary>
         private string GenerateMessage()
         {
-            string _text = string.Empty;
+            string _text = "Cписок доступных голосов:\n";
             foreach (var n in GetAListOfVotes.GetNames())
             {
                 _text += n + '\n';

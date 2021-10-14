@@ -25,7 +25,7 @@ namespace TelegramBot.Messages.TextMessages
         /// </summary>
         public override string SendingMessage(MessageEventArgs args)
         {
-            Message mes = MessageFromBot("/say - озвучить текст\n/anek - рандомный анекдот\n/change - изменить голос озвучки текста\n/names - список доступных голосов для озвучки текста\n/help - список всех команд", args).Result;
+            Message mes = MessageFromBot("Доступные команды:\n/anek - рандомный анекдот\n/say - озвучить текст\n/change - изменить голос озвучки текста\n/names - список доступных голосов для озвучки текста\n/help - список всех команд", args).Result;
             return LoggingMessages.LogMess(mes, true);
         }
     }

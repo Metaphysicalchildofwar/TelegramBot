@@ -13,7 +13,7 @@ namespace TelegramBot.Messages.Handlers
         /// </summary>
         public override object Handle(MessageEventArgs args)
         {
-            if (args.Message.Text.IndexOf("/help") != -1)
+            if (args.Message.Text.IndexOf("/help") != -1 || args.Message.Text.IndexOf("/start") != -1)
             {
                 SendMessage _sendMessage = new SendingHelpMessage() { };
                 return _sendMessage.SendingMessage(args);
