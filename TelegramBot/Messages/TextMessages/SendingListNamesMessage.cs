@@ -26,13 +26,21 @@ namespace TelegramBot.Messages.TextMessages
         /// </summary>
         public override string SendingMessage(MessageEventArgs args)
         {
+            Message mes = MessageFromBot(GenerateMessage(), args).Result;
+            return LoggingMessages.LogMess(mes, true);
+        }
+
+        /// <summary>
+        /// Сформировать сообщение списка голосов.
+        /// </summary>
+        private string GenerateMessage()
+        {
             string _text = string.Empty;
-            foreach(var n in GetAListOfVotes.GetNames())
+            foreach (var n in GetAListOfVotes.GetNames())
             {
                 _text += n + '\n';
             }
-            Message mes = MessageFromBot(_text, args).Result;
-            return LoggingMessages.LogMess(mes, true);
+            return _text;
         }
     }
 }
