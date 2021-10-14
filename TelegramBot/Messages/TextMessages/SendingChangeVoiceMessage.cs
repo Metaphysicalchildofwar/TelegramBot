@@ -5,9 +5,9 @@ using Telegram.Bot.Types;
 namespace TelegramBot.Messages.TextMessages
 {
     /// <summary>
-    /// Отправка списка команд
+    /// Формирует текстовое сообщение.
     /// </summary>
-    public class SendingHelpMessage : SendMessage
+    public class SendingChangeVoiceMessage : SendMessage
     {
         /// <summary>
         /// Формирует текстовое сообщение.
@@ -25,7 +25,8 @@ namespace TelegramBot.Messages.TextMessages
         /// </summary>
         public override string SendingMessage(MessageEventArgs args)
         {
-            Message mes = MessageFromBot("/say - озвучить текст\n/anek - рандомный анекдот\n/help - список всех команд", args).Result;
+
+            Message mes = MessageFromBot("голос бота изменен", args).Result;
             return LoggingMessages.LogMess(mes, true);
         }
     }

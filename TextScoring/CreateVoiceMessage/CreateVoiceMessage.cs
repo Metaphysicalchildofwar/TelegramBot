@@ -19,19 +19,10 @@ namespace TextScoring.CreateVoiceMessage
         /// </summary>
         static public async Task<bool> CreateMessage(string message)
         {
-            // указываем данные используемого аккаунта
-            BasicAWSCredentials awsCredentials =
-                new BasicAWSCredentials(AWSAccessKeyId, AWSSecretKey);
-
-            // создаём объект класса AmazonPollyClient, 
-            // передавая данные аккаунта и указывая используемый регион
-            AmazonPollyClient amazonPollyClient =
-                new AmazonPollyClient(awsCredentials, RegionEndpoint.EUCentral1);
-            // создаём объект запроса
+            BasicAWSCredentials awsCredentials = new BasicAWSCredentials(AWSAccessKeyId, AWSSecretKey);
+            AmazonPollyClient amazonPollyClient = new AmazonPollyClient(awsCredentials, RegionEndpoint.EUCentral1);
             SynthesizeSpeechRequest synthesizeSpeechRequest = MakeSynthesizeSpeechRequest(ProcessTextMessage.TruncateString(message));
-            // получаем ответ от AWS Polly
-            SynthesizeSpeechResponse synthesizeSpeechResponse =
-                await amazonPollyClient.SynthesizeSpeechAsync(synthesizeSpeechRequest);
+            SynthesizeSpeechResponse synthesizeSpeechResponse = await amazonPollyClient.SynthesizeSpeechAsync(synthesizeSpeechRequest);
 
             return CreateOggFile.CreateFile(synthesizeSpeechResponse.AudioStream);
         }
