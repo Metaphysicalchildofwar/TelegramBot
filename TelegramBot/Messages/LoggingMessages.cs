@@ -14,9 +14,15 @@ namespace TelegramBot.Messages
         /// </summary>
         public static string LogMess (Message args, bool from)
         {
-            var Name = from == true ? args.From.FirstName : args.Chat.FirstName;
-            var mes = $"{args.Date.ToLocalTime()} от {Name} сообщение типа {args.Type}: {args.Text}";
-            return mes;
+            if (args.Chat.Type == Telegram.Bot.Types.Enums.ChatType.Supergroup)
+            {
+                return $"{args.Date.ToLocalTime()} из группы '{args.Chat.Title}' сообщение типа {args.Type}: {args.Text}";
+            }
+            else
+            {
+                var Name = from == true ? args.From.FirstName : args.Chat.FirstName;
+                return $"{args.Date.ToLocalTime()} от '{Name}' сообщение типа {args.Type}: {args.Text}";
+            }
         }
     }
 }
