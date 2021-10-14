@@ -17,8 +17,8 @@ namespace TelegramBot.Messages.Handlers
         {
             if (args.Message.Text.IndexOf("/change") != -1)
             {
-                SendMessage sendMessage = new SendingChangeVoiceMessage() { };
-                return sendMessage.SendingMessage(args);
+                SendMessage _sendMessage = new SendingChangeVoiceMessage() { };
+                return _sendMessage.SendingMessage(args);
             }
             else
             {

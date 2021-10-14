@@ -20,7 +20,7 @@ namespace TelegramBot.Messages
             var help = new MessageHelpHandler();
             var voice = new MessageChangeVoiceHandler();
 
-            say.SetNext(anek).SetNext(help);
+            say.SetNext(anek).SetNext(help).SetNext(voice);
             return say.Handle(args);
         }
     }

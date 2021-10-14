@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
+using TextScoring.ChangeVoice;
 
 namespace TelegramBot.Messages.TextMessages
 {
@@ -25,7 +26,7 @@ namespace TelegramBot.Messages.TextMessages
         /// </summary>
         public override string SendingMessage(MessageEventArgs args)
         {
-
+            GetTheSelectedName.FindSelectedName(args.Message.Text);
             Message mes = MessageFromBot("голос бота изменен", args).Result;
             return LoggingMessages.LogMess(mes, true);
         }

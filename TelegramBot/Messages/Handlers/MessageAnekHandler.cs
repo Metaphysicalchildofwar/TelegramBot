@@ -15,8 +15,8 @@ namespace TelegramBot.Messages.Handlers
         {
             if (args.Message.Text.IndexOf("/anek") != -1)
             {
-                SendMessage sendMessage = new SendingTextMessage() { };
-                return sendMessage.SendingMessage(args);
+                SendMessage _sendMessage = new SendingTextMessage() { };
+                return _sendMessage.SendingMessage(args);
             }
             else
             {

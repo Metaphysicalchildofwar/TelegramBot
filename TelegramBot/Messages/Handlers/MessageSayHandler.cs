@@ -15,8 +15,8 @@ namespace TelegramBot.Messages.Handlers
         {
             if (args.Message.Text.IndexOf("/say") != -1)
             {
-                SendMessage sendMessage = new SendingVoiceMessage() { };
-                return sendMessage.SendingMessage(args);
+                SendMessage _sendMessage = new SendingVoiceMessage() { };
+                return _sendMessage.SendingMessage(args);
             }
             else
             {

@@ -15,8 +15,8 @@ namespace TelegramBot.Messages.Handlers
         {
             if (args.Message.Text.IndexOf("/help") != -1)
             {
-                SendMessage sendMessage = new SendingHelpMessage() { };
-                return sendMessage.SendingMessage(args);
+                SendMessage _sendMessage = new SendingHelpMessage() { };
+                return _sendMessage.SendingMessage(args);
             }
             else
             {

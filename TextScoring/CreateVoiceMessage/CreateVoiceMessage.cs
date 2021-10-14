@@ -21,7 +21,7 @@ namespace TextScoring.CreateVoiceMessage
         {
             BasicAWSCredentials awsCredentials = new BasicAWSCredentials(AWSAccessKeyId, AWSSecretKey);
             AmazonPollyClient amazonPollyClient = new AmazonPollyClient(awsCredentials, RegionEndpoint.EUCentral1);
-            SynthesizeSpeechRequest synthesizeSpeechRequest = MakeSynthesizeSpeechRequest(ProcessTextMessage.TruncateString(message));
+            SynthesizeSpeechRequest synthesizeSpeechRequest = MakeSynthesizeSpeechRequest(ProcessTextMessage.TruncateString(message, 4));
             SynthesizeSpeechResponse synthesizeSpeechResponse = await amazonPollyClient.SynthesizeSpeechAsync(synthesizeSpeechRequest);
 
             return CreateOggFile.CreateFile(synthesizeSpeechResponse.AudioStream);
