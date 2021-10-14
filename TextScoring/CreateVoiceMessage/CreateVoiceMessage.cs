@@ -4,6 +4,8 @@ using Amazon.Polly.Model;
 using Amazon.Runtime;
 using System.Configuration;
 using System.Threading.Tasks;
+using TextScoring.ChangeVoice;
+
 namespace TextScoring.CreateVoiceMessage
 {
     /// <summary>
@@ -38,7 +40,7 @@ namespace TextScoring.CreateVoiceMessage
             synthesizeSpeechRequest.LanguageCode = LanguageCode.RuRU;
             synthesizeSpeechRequest.OutputFormat = OutputFormat.Ogg_vorbis;
             // указываем желаемый голос
-            synthesizeSpeechRequest.VoiceId = VoiceId.Maxim;
+            synthesizeSpeechRequest.VoiceId = VoiceId.FindValue(GetTheSelectedName.VoiceName);
 
             return synthesizeSpeechRequest;
         }

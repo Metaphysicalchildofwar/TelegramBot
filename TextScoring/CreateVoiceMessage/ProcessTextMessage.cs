@@ -10,7 +10,7 @@
         /// </summary>
         public static string TruncateString(string message, int count)
         {
-            return message.Substring(count);
+            return message.Substring(count).Trim();
         }
     }
 }

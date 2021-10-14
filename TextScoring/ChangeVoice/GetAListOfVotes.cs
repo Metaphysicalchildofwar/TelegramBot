@@ -1,13 +1,12 @@
 ﻿using Amazon.Polly;
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace TextScoring.ChangeVoice
 {
     /// <summary>
     /// Получает список всех голосов
     /// </summary>
-    internal static class GetAListOfVotes
+    public static class GetAListOfVotes
     {
         /// <summary>
         /// Получает имена
@@ -15,11 +14,9 @@ namespace TextScoring.ChangeVoice
         public static List<string> GetNames()
         {
             var _names = new List<string>();
-
-            var info = typeof(VoiceId).GetProperties(BindingFlags.NonPublic | BindingFlags.Instance);
-            for(var i = 0; i < info.Length; i++)
+           foreach(var n in typeof(VoiceId).GetFields())
             {
-                _names.Add(info[i].ToString());
+                _names.Add(n.Name.ToString());
             }
             return _names;
         }

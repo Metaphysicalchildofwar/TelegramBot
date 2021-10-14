@@ -19,8 +19,8 @@ namespace TelegramBot.Messages
             var anek = new MessageAnekHandler();
             var help = new MessageHelpHandler();
             var voice = new MessageChangeVoiceHandler();
-
-            say.SetNext(anek).SetNext(help).SetNext(voice);
+            var listNames = new MessageListNamesHandler();
+            say.SetNext(anek).SetNext(help).SetNext(voice).SetNext(listNames);
             return say.Handle(args);
         }
     }

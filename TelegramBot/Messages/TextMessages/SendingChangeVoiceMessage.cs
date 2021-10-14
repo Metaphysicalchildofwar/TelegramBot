@@ -26,8 +26,8 @@ namespace TelegramBot.Messages.TextMessages
         /// </summary>
         public override string SendingMessage(MessageEventArgs args)
         {
-            GetTheSelectedName.FindSelectedName(args.Message.Text);
-            Message mes = MessageFromBot("голос бота изменен", args).Result;
+            var text = GetTheSelectedName.FindSelectedName(args.Message.Text);
+            Message mes = MessageFromBot(text, args).Result;
             return LoggingMessages.LogMess(mes, true);
         }
     }

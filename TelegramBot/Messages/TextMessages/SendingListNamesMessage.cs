@@ -1,13 +1,14 @@
 ﻿using System.Threading.Tasks;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
+using TextScoring.ChangeVoice;
 
 namespace TelegramBot.Messages.TextMessages
 {
     /// <summary>
-    /// Отправка списка команд
+    /// Отправка списка голосов
     /// </summary>
-    public class SendingHelpMessage : SendMessage
+    public class SendingListNamesMessage : SendMessage
     {
         /// <summary>
         /// Формирует текстовое сообщение.
@@ -25,7 +26,12 @@ namespace TelegramBot.Messages.TextMessages
         /// </summary>
         public override string SendingMessage(MessageEventArgs args)
         {
-            Message mes = MessageFromBot("/say - озвучить текст\n/anek - рандомный анекдот\n/change - изменить голос озвучки текста\n/names - список доступных голосов для озвучки текста\n/help - список всех команд", args).Result;
+            string _text = string.Empty;
+            foreach(var n in GetAListOfVotes.GetNames())
+            {
+                _text += n + '\n';
+            }
+            Message mes = MessageFromBot(_text, args).Result;
             return LoggingMessages.LogMess(mes, true);
         }
     }
