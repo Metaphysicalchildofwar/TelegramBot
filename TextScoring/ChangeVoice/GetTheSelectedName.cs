@@ -8,7 +8,7 @@ namespace TextScoring.ChangeVoice
 {
     public static class GetTheSelectedName
     {
-        public static string VoiceName = "Maxim";
+        public static string VoiceName = null;
         public static string FindSelectedName(string name)
         {
             var _changeName = ProcessTextMessage.TruncateString(name, 7);

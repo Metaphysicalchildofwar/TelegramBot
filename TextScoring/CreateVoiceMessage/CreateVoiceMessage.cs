@@ -40,7 +40,7 @@ namespace TextScoring.CreateVoiceMessage
             synthesizeSpeechRequest.LanguageCode = LanguageCode.RuRU;
             synthesizeSpeechRequest.OutputFormat = OutputFormat.Ogg_vorbis;
             // указываем желаемый голос
-            synthesizeSpeechRequest.VoiceId = VoiceId.FindValue(GetTheSelectedName.VoiceName);
+            synthesizeSpeechRequest.VoiceId = VoiceId.FindValue(GetTheSelectedName.VoiceName ?? VoiceId.Maxim);
 
             return synthesizeSpeechRequest;
         }
