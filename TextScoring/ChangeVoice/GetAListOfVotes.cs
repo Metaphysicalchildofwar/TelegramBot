@@ -14,7 +14,7 @@ namespace TextScoring.ChangeVoice
         public static List<string> GetNames()
         {
             var _names = new List<string>();
-           foreach(var n in typeof(VoiceId).GetFields())
+            foreach (var n in typeof(VoiceId).GetFields())
             {
                 _names.Add(n.Name.ToString());
             }

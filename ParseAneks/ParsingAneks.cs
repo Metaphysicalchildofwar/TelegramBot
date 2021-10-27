@@ -14,7 +14,7 @@ namespace ParseAneks
     public static class ParsingAneks
     {
         private static string Html { get; set; }
-        private static Regex Reg { get; set; }
+        private static Regex Reg { get; set; } = new Regex(@"(?<=<meta name=" + "\"description\" content=\")" + @"([\s\S]*?)(?=" + "\">)");
         private static MatchCollection Collection { get; set; }
 
         /// <summary>
@@ -23,16 +23,8 @@ namespace ParseAneks
         public static string ParsAnek()
         {
             Html = ParsHtml();
-            Reg = new Regex(@"(?<=<meta name=" + "\"description\" content=\")" + @"([\s\S]*?)(?=" + "\">)");
             Collection = Reg.Matches(Html);
-            if (Collection.Count > 0)
-            {
-                return Collection.FirstOrDefault().Value;
-            }
-            else
-            {
-                return "Анека не будет.";
-            }
+            return Collection.FirstOrDefault()?.Value;            
         }
 
         /// <summary>
@@ -43,8 +35,7 @@ namespace ParseAneks
             using (var Client = new WebClient { Encoding = Encoding.Default })
             {
                 return Client.DownloadString(ConfigurationManager.AppSettings.Get("SiteAneks"));
-            }
-            
+            }            
         }
     }
 }

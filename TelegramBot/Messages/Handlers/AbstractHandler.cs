@@ -26,14 +26,7 @@ namespace TelegramBot.Messages.Handlers
         /// </summary>
         public virtual object Handle(MessageEventArgs args)
         {
-            if (_nextHandler != null)
-            {
-                return _nextHandler.Handle(args);
-            }
-            else
-            {
-                return null;
-            }
+            return _nextHandler != null ? _nextHandler.Handle(args) : null;
         }
     }
 }

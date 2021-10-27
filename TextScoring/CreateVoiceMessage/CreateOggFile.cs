@@ -26,7 +26,7 @@ namespace TextScoring.CreateVoiceMessage
                 }
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 return false;

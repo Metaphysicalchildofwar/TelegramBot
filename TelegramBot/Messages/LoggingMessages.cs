@@ -12,7 +12,7 @@ namespace TelegramBot.Messages
         /// Метод записывает в файл и возвращает текст сообщений.
         /// Если from == true - логирование исходящего сообщения, иначе - логирование входящего сообщения.
         /// </summary>
-        public static string LogMess (Message args, bool from)
+        public static string LogMess(Message args, bool from)
         {
             if (args.Chat.Type == Telegram.Bot.Types.Enums.ChatType.Supergroup)
             {

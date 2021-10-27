@@ -13,15 +13,7 @@ namespace TelegramBot.Messages.Handlers
         /// </summary>
         public override object Handle(MessageEventArgs args)
         {
-            if (args.Message.Text.IndexOf("/anek") != -1)
-            {
-                SendMessage _sendMessage = new SendingTextMessage() { };
-                return _sendMessage.SendingMessage(args);
-            }
-            else
-            {
-                return base.Handle(args);
-            }
+            return args.Message.Text.IndexOf("/anek") != -1 ? new SendingTextMessage().SendingMessage(args) : base.Handle(args);
         }
     }
 }

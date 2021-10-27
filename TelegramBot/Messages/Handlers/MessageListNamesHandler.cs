@@ -13,15 +13,7 @@ namespace TelegramBot.Messages.Handlers
         /// </summary>
         public override object Handle(MessageEventArgs args)
         {
-            if (args.Message.Text.IndexOf("/names") != -1)
-            {
-                SendMessage _sendMessage = new SendingListNamesMessage() { };
-                return _sendMessage.SendingMessage(args);
-            }
-            else
-            {
-                return base.Handle(args);
-            }
+            return args.Message.Text.IndexOf("/names") != -1 ? new SendingListNamesMessage() : base.Handle(args);
         }
     }
 }

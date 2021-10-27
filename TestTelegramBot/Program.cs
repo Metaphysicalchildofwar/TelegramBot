@@ -21,7 +21,7 @@ namespace WorkTelegramBot
                 Console.ReadLine();
                 InitializeBot.Client.StopReceiving();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -30,7 +30,7 @@ namespace WorkTelegramBot
         private static void OnMessageHandler(object sender, MessageEventArgs e)
         {
             try
-            {                
+            {
                 //логирование приема сообщений
                 Console.WriteLine(Task.Run(() => LoggingMessages.LogMess(e.Message, false)).Result);
                 //отправка сообщений

@@ -15,15 +15,7 @@ namespace TelegramBot.Messages.Handlers
         /// </summary>
         public override object Handle(MessageEventArgs args)
         {
-            if (args.Message.Text.IndexOf("/change") != -1)
-            {
-                SendMessage _sendMessage = new SendingChangeVoiceMessage() { };
-                return _sendMessage.SendingMessage(args);
-            }
-            else
-            {
-                return base.Handle(args);
-            }
+            return args.Message.Text.IndexOf("/change") != -1 ? new SendingChangeVoiceMessage().SendingMessage(args) : base.Handle(args);
         }
     }
 }

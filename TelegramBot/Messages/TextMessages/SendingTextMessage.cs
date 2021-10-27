@@ -26,7 +26,7 @@ namespace TelegramBot.Messages.TextMessages
         /// </summary>
         public override string SendingMessage(MessageEventArgs args)
         {
-            Message mes = MessageFromBot(ParsingAneks.ParsAnek(), args).Result;
+            Message mes = MessageFromBot(ParsingAneks.ParsAnek() ?? "Анека не будет", args).Result;
             return LoggingMessages.LogMess(mes, true);
         }
     }

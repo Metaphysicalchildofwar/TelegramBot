@@ -1,7 +1,4 @@
 ﻿using Amazon.Polly;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TextScoring.CreateVoiceMessage;
 
 namespace TextScoring.ChangeVoice
@@ -15,9 +12,10 @@ namespace TextScoring.ChangeVoice
             var _namesList = GetAListOfVotes.GetNames();
 
             var _name = _namesList.Find(x => x == _changeName);
-            if (_namesList.Find(x => x == _changeName) == null) 
+            if (_namesList.Find(x => x == _changeName) == null)
             {
-                return $"Указанного имени не существует, выбранный голос - {VoiceName}.\nИспользуйте команду /names для просмотра доступных голосов";
+                return $"Указанного имени не существует, выбранный голос - {VoiceName}.\n" +
+                    $"Используйте команду /names для просмотра доступных голосов";
             }
             else
             {
